@@ -71,6 +71,7 @@ public class ItemSuper {
         this.value = value;
     }
 
+
     public int getTotalItemAmount() {
         return totalItemAmount;
     }

@@ -9,110 +9,112 @@ import java.util.Set;
 @Table(name = "WEAPONS")
 public class Weapon extends ItemSuper {
 
-//    public enum WeaponDamageType{
-//        SLASHING,
-//        PIERCING,
-//        BLUDGEONING
-//    }
-//
-//    public enum WeaponDiceDamage{
-//        D1,
-//        D2,
-//        D4,
-//        D6,
-//        D8,
-//        D10,
-//        D12,
-//        D20
-//    }
-//
-//    public enum WeaponSize{
-//        SMALL,
-//        MEDIUM,
-//        LARGE,
-//        COLOSSAL
-//    }
-//
-//
-//    public enum WeaponProperties{
-//        LIGHT,
-//        HEAVY,
-//        VERSATILE,
-//        ONE_HANDED,
-//        TWO_HANDED,
-//        REACH,
-//        SWIFT,
-//        CLEAVE,
-//        PARRY,
-//        THROWABLE,
-//        RANGED
-//    }
-//
-//    public enum WeaponType{
-//        DAGGER,
-//        SHORT_SWORD,
-//        SWORD,
-//        LONGSWORD,
-//        GREATSWORD,
-//        SPEAR,
-//        GLAIVE,
-//        HALBERD,
-//        STAFF,
-//        SHORTBOW,
-//        BOW,
-//        LONGBOW,
-//        CROSSBOW
-//
-//    }
-
-    private int weaponDamageType;
-
-    private int weaponDiceDamage;
-
-    private Set<Integer> weaponProperties;
-
-    private int weaponType;
-
-    private int weaponSize;
-
-
-    public int getWeaponType() {
-        return weaponType;
+    public enum WeaponDamageType{
+        SLASHING,
+        PIERCING,
+        BLUDGEONING
     }
 
-    public void setWeaponType(int weaponType) {
-        this.weaponType = weaponType;
+    public enum WeaponDiceDamage{
+        D1,
+        D2,
+        D4,
+        D6,
+        D8,
+        D10,
+        D12,
+        D20
     }
 
-    public int getWeaponDamageType() {
+    public enum WeaponSize{
+        SMALL,
+        MEDIUM,
+        LARGE,
+        COLOSSAL
+    }
+
+
+    public enum WeaponProperties{
+        LIGHT,
+        HEAVY,
+        VERSATILE,
+        ONE_HANDED,
+        TWO_HANDED,
+        REACH,
+        SWIFT,
+        CLEAVE,
+        PARRY,
+        THROWABLE,
+        RANGED
+    }
+
+    public enum WeaponType{
+        DAGGER,
+        SHORT_SWORD,
+        SWORD,
+        LONGSWORD,
+        GREATSWORD,
+        SPEAR,
+        GLAIVE,
+        HALBERD,
+        STAFF,
+        SHORTBOW,
+        BOW,
+        LONGBOW,
+        CROSSBOW
+
+    }
+
+    private WeaponDamageType weaponDamageType;
+
+    private WeaponDiceDamage weaponDiceDamage;
+
+    private Set<WeaponProperties> weaponProperties;
+
+    private WeaponType weaponType;
+
+    private WeaponSize weaponSize;
+
+
+
+
+    public WeaponDamageType getWeaponDamageType() {
         return weaponDamageType;
     }
 
-    public void setWeaponDamageType(int weaponDamageType) {
+    public void setWeaponDamageType(WeaponDamageType weaponDamageType) {
         this.weaponDamageType = weaponDamageType;
     }
 
-    public int getWeaponDiceDamage() {
+    public WeaponDiceDamage getWeaponDiceDamage() {
         return weaponDiceDamage;
     }
 
-    public void setWeaponDiceDamage(int weaponDiceDamage) {
+    public void setWeaponDiceDamage(WeaponDiceDamage weaponDiceDamage) {
         this.weaponDiceDamage = weaponDiceDamage;
     }
 
-    public Set<Integer> getWeaponProperties() {
+    public Set<WeaponProperties> getWeaponProperties() {
         return weaponProperties;
     }
 
-    public void setWeaponProperties(Set<Integer> weaponProperties) {
+    public void setWeaponProperties(Set<WeaponProperties> weaponProperties) {
         this.weaponProperties = weaponProperties;
     }
 
-    public int getWeaponSize() {
+    public WeaponType getWeaponType() {
+        return weaponType;
+    }
+
+    public void setWeaponType(WeaponType weaponType) {
+        this.weaponType = weaponType;
+    }
+
+    public WeaponSize getWeaponSize() {
         return weaponSize;
     }
 
-    public void setWeaponSize(int weaponSize) {
+    public void setWeaponSize(WeaponSize weaponSize) {
         this.weaponSize = weaponSize;
     }
 }

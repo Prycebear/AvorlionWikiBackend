@@ -15,25 +15,15 @@ public class WeaponCardDTO {
 
     private ItemSuper.itemRarity rarity;
 
-    private int weaponDamageType;
+    private Weapon.WeaponDamageType weaponDamageType;
 
-    private int weaponDiceDamage;
+    private Weapon.WeaponDiceDamage weaponDiceDamage;
 
-    private Set<Integer> weaponProperties;
+    private Set<Weapon.WeaponProperties> weaponProperties;
 
-    private int weaponType;
+    private Weapon.WeaponType weaponType;
 
-    private int weaponSize;
-
-//    private Weapon.WeaponDamageType weaponDamageType;
-//
-//    private Weapon.WeaponDiceDamage weaponDiceDamage;
-//
-//    private Set<Weapon.WeaponProperties> weaponProperties;
-//
-//    private Weapon.WeaponType weaponType;
-//
-//    private Weapon.WeaponSize weaponSize;
+    private Weapon.WeaponSize weaponSize;
 
     public long getItemId() {
         return itemId;
@@ -67,43 +57,43 @@ public class WeaponCardDTO {
         this.rarity = rarity;
     }
 
-    public int getWeaponDamageType() {
+    public Weapon.WeaponDamageType getWeaponDamageType() {
         return weaponDamageType;
     }
 
-    public void setWeaponDamageType(int weaponDamageType) {
+    public void setWeaponDamageType(Weapon.WeaponDamageType weaponDamageType) {
         this.weaponDamageType = weaponDamageType;
     }
 
-    public int getWeaponDiceDamage() {
+    public Weapon.WeaponDiceDamage getWeaponDiceDamage() {
         return weaponDiceDamage;
     }
 
-    public void setWeaponDiceDamage(int weaponDiceDamage) {
+    public void setWeaponDiceDamage(Weapon.WeaponDiceDamage weaponDiceDamage) {
         this.weaponDiceDamage = weaponDiceDamage;
     }
 
-    public Set<Integer> getWeaponProperties() {
+    public Set<Weapon.WeaponProperties> getWeaponProperties() {
         return weaponProperties;
     }
 
-    public void setWeaponProperties(Set<Integer> weaponProperties) {
+    public void setWeaponProperties(Set<Weapon.WeaponProperties> weaponProperties) {
         this.weaponProperties = weaponProperties;
     }
 
-    public int getWeaponType() {
+    public Weapon.WeaponType getWeaponType() {
         return weaponType;
     }
 
-    public void setWeaponType(int weaponType) {
+    public void setWeaponType(Weapon.WeaponType weaponType) {
         this.weaponType = weaponType;
     }
 
-    public int getWeaponSize() {
+    public Weapon.WeaponSize getWeaponSize() {
         return weaponSize;
     }
 
-    public void setWeaponSize(int weaponSize) {
+    public void setWeaponSize(Weapon.WeaponSize weaponSize) {
         this.weaponSize = weaponSize;
     }
 }
