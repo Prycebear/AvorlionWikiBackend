@@ -10,7 +10,7 @@ import jakarta.persistence.MappedSuperclass;
 public class ItemSuper {
 
     public enum itemRarity{
-        COMMON, UNCOMMON, RARE;
+        COMMON, UNCOMMON, RARE, LEGENDARY;
 
     }
 
@@ -26,8 +26,6 @@ public class ItemSuper {
     private String itemImageURL;
 
     private int value;
-
-    private boolean legendary;
 
     private int totalItemAmount;
 
@@ -71,14 +69,6 @@ public class ItemSuper {
 
     public void setValue(int value) {
         this.value = value;
-    }
-
-    public boolean isLegendary() {
-        return legendary;
-    }
-
-    public void setLegendary(boolean legendary) {
-        this.legendary = legendary;
     }
 
     public int getTotalItemAmount() {

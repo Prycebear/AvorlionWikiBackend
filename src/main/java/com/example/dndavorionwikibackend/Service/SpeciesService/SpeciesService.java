@@ -1,6 +1,5 @@
 package com.example.dndavorionwikibackend.Service.SpeciesService;
 
-import com.example.dndavorionwikibackend.Model.Gods.Gods;
 import com.example.dndavorionwikibackend.Model.Species.Species;
 import com.example.dndavorionwikibackend.Repositories.SpeciesRepositories.SpeciesRepository;
 import org.springframework.stereotype.Service;

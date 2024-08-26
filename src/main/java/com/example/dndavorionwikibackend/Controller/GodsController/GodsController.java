@@ -3,13 +3,11 @@ package com.example.dndavorionwikibackend.Controller.GodsController;
 import com.example.dndavorionwikibackend.DTO.GodsDTO.GodsCardDTO;
 import com.example.dndavorionwikibackend.DTO.GodsDTO.GodsDTO;
 import com.example.dndavorionwikibackend.Model.Gods.Gods;
-import com.example.dndavorionwikibackend.Model.Species.Species;
 import com.example.dndavorionwikibackend.Service.GodsService.GodsService;
 import com.example.dndavorionwikibackend.Translation.GodsTranslator.GodsTranslator;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
