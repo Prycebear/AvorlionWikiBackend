@@ -1,6 +1,7 @@
 package com.example.dndavorionwikibackend.Controller.SpeciesController;
 
 
+import com.example.dndavorionwikibackend.DTO.SpeciesDTO.SpeciesCardDTO;
 import com.example.dndavorionwikibackend.DTO.SpeciesDTO.SpeciesDTO;
 import com.example.dndavorionwikibackend.Model.Species.Species;
 import com.example.dndavorionwikibackend.Service.SpeciesService.SpeciesService;
@@ -44,10 +45,19 @@ public class SpeciesController {
                 .collect(Collectors.toSet());
     }
 
+    @CrossOrigin
+    @GetMapping(value = "/all/card")
+    public Set<SpeciesCardDTO> listAllCards() {
+        return speciesService.findAll()
+                .stream()
+                .map(speciesTranslator::speciesToSpeciesCardDTO)
+                .collect(Collectors.toSet());
+    }
+
 
     @CrossOrigin
     @GetMapping("/speciesid/{id}")
-    public ResponseEntity<SpeciesDTO> listById(@PathVariable("id") long speciesId) {
+    public ResponseEntity<SpeciesDTO> listById(@PathVariable("id") long speciesId) throws Exception {
         return ResponseEntity.ok(speciesTranslator.speciesToSpeciesDTO(speciesService.findById(speciesId)));
     }
 
@@ -60,7 +70,7 @@ public class SpeciesController {
     @CrossOrigin
     @Transactional
     @DeleteMapping("/speciesdeletebyid/{id}")
-    public ResponseEntity<String> deleteById(@PathVariable("id") long speciesId) {
+    public ResponseEntity<String> deleteById(@PathVariable("id") long speciesId) throws Exception {
         Optional<Species> speciesExist = Optional.ofNullable(this.speciesService.findById(speciesId));
         if (speciesExist.isPresent()) {
             this.speciesService.deleteById(speciesId);

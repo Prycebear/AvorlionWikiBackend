@@ -1,5 +1,6 @@
 package com.example.dndavorionwikibackend.Translation.GodsTranslator;
 
+import com.example.dndavorionwikibackend.DTO.GodsDTO.GodsCardDTO;
 import com.example.dndavorionwikibackend.DTO.GodsDTO.GodsDTO;
 import com.example.dndavorionwikibackend.Model.Gods.Gods;
 import org.modelmapper.ModelMapper;
@@ -20,5 +21,9 @@ public class GodsTranslator {
 
     public Gods godsDTOToGods (GodsDTO godsDTO){
         return modelMapper.map(godsDTO, Gods.class);
+    }
+
+    public GodsCardDTO godsToGodsCardsDTO (Gods gods){
+        return modelMapper.map(gods, GodsCardDTO.class);
     }
 }

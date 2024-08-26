@@ -1,6 +1,7 @@
 package com.example.dndavorionwikibackend.Model.Campaign;
 
 import com.example.dndavorionwikibackend.Model.Characters.PlayerCharacter;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -33,7 +34,7 @@ public class Campaign {
     @JoinColumn(name = "CAMPAIGN_ID")
     private Set<Session> sessions;
 
-    @JsonIgnore
+    @JsonBackReference
     @OneToMany
     @JoinColumn(name = "CAMPAIGN_ID")
     private Set<PlayerCharacter> playerCharacters;

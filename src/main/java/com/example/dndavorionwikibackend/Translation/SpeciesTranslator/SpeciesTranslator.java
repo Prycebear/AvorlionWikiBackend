@@ -1,5 +1,6 @@
 package com.example.dndavorionwikibackend.Translation.SpeciesTranslator;
 
+import com.example.dndavorionwikibackend.DTO.SpeciesDTO.SpeciesCardDTO;
 import com.example.dndavorionwikibackend.DTO.SpeciesDTO.SpeciesDTO;
 import com.example.dndavorionwikibackend.Model.Species.Species;
 import org.modelmapper.ModelMapper;
@@ -20,5 +21,13 @@ public class SpeciesTranslator {
 
     public Species speciesDTOToSpecies (SpeciesDTO speciesDTO){
         return modelMapper.map(speciesDTO, Species.class);
+    }
+
+    public SpeciesCardDTO speciesToSpeciesCardDTO (Species species){
+        return modelMapper.map(species, SpeciesCardDTO.class);
+    }
+
+    public Species speciesCardDTOToSpecies (SpeciesCardDTO speciesCardDTO){
+        return modelMapper.map(speciesCardDTO, Species.class);
     }
 }

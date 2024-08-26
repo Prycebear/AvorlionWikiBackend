@@ -22,6 +22,17 @@ public class GodsService {
         return godsRepository.findAll();
     }
 
+    public Gods save(Gods god) throws Exception {
+        Optional<Gods> savedGod = godsRepository.findById(god.getGodsId());
+        if(savedGod.isPresent()){
+            throw new Exception("God already exist with given name:" + god.getGodsName());
+        } else if (god.getGodLevel().isEmpty()) {
+            throw new Exception(god.getGodsName() + " has no level");
+        }
+
+        return godsRepository.save(god);
+    }
+
     public Gods findByGodsId(long godsId) throws Exception {
         Optional<Gods> godExist = godsRepository.findById(godsId);
         if(!godExist.isPresent()){

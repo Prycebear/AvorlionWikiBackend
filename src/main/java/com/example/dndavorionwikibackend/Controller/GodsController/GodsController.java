@@ -1,15 +1,13 @@
 package com.example.dndavorionwikibackend.Controller.GodsController;
 
+import com.example.dndavorionwikibackend.DTO.GodsDTO.GodsCardDTO;
 import com.example.dndavorionwikibackend.DTO.GodsDTO.GodsDTO;
 import com.example.dndavorionwikibackend.Model.Gods.Gods;
+import com.example.dndavorionwikibackend.Model.Species.Species;
 import com.example.dndavorionwikibackend.Service.GodsService.GodsService;
 import com.example.dndavorionwikibackend.Translation.GodsTranslator.GodsTranslator;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Set;
@@ -30,13 +28,19 @@ public class GodsController {
         this.godsTranslator = godsTranslator;
     }
 
+    @CrossOrigin
+    @PostMapping("/add")
+    public void addSpecies(@RequestBody Gods gods) throws Exception {
+        godsTranslator.godsToGodsCardsDTO(godsService.save(gods));
+    }
+
 
     @CrossOrigin
     @GetMapping(value = "/all")
-    public Set<GodsDTO> listAll() {
+    public Set<GodsCardDTO> listAll() {
         return godsService.findAll()
                 .stream()
-                .map(godsTranslator::godsToGodsDTO)
+                .map(godsTranslator::godsToGodsCardsDTO)
                 .collect(Collectors.toSet());
     }
 

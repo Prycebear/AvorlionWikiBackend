@@ -46,7 +46,7 @@ public class Gods {
     @JoinColumn(name="CULTS_ID")
     private Cults cults;
 
-    public Long setGodsId() {
+    public Long getGodsId() {
         return godsId;
     }
 
@@ -101,4 +101,5 @@ public class Gods {
     public void setCults(Cults cults) {
         this.cults = cults;
     }
+
 }

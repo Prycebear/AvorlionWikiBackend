@@ -1,5 +1,6 @@
 package com.example.dndavorionwikibackend.Translation.CampaignTranslator;
 
+import com.example.dndavorionwikibackend.DTO.CampaignDTO.CampaignCardDTO;
 import com.example.dndavorionwikibackend.DTO.CampaignDTO.CampaignDTO;
 import com.example.dndavorionwikibackend.DTO.SpeciesDTO.SpeciesDTO;
 import com.example.dndavorionwikibackend.Model.Campaign.Campaign;
@@ -18,6 +19,10 @@ public class CampaignTranslator {
 
     public CampaignDTO campaignToCampaignDTO (Campaign campaign){
         return modelMapper.map(campaign, CampaignDTO.class);
+    }
+
+    public CampaignCardDTO campaignToCampaignCardDTO (Campaign campaign){
+        return modelMapper.map(campaign, CampaignCardDTO.class);
     }
 
     public Campaign CampaignDTOTocampaign (CampaignDTO campaignDTO){

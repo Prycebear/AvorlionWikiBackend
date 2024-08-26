@@ -1,12 +1,12 @@
 package com.example.dndavorionwikibackend.Service.CampaignService;
 
 import com.example.dndavorionwikibackend.Model.Campaign.Campaign;
-import com.example.dndavorionwikibackend.Model.Species.Species;
 import com.example.dndavorionwikibackend.Repositories.CamapignRepository.CampaignRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 @Service
 public class CampaignService {
@@ -22,6 +22,10 @@ public class CampaignService {
             throw new Exception("Species already exist with given name:" + campaign.getCampaignName());
         }
         return campaignRepository.save(campaign);
+    }
+
+    public Set<Campaign> findAllByCampaignType(String campaignType) throws Exception {
+        return campaignRepository.findAllByCampaignType(campaignType);
     }
 
     public List<Campaign> findAll() {

@@ -2,6 +2,7 @@ package com.example.dndavorionwikibackend.Model.Characters;
 
 import com.example.dndavorionwikibackend.Model.Campaign.Campaign;
 import com.example.dndavorionwikibackend.Model.User.User;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 @Entity
@@ -13,6 +14,7 @@ public class PlayerCharacter extends CharacterSuper{
     @JoinColumn(name="USER_ID")
     private User userId;
 
+    @JsonManagedReference
     @ManyToOne(optional = true)
     @JoinColumn(name="CAMPAIGN_ID")
     private Campaign campaign;

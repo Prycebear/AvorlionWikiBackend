@@ -1,5 +1,6 @@
 package com.example.dndavorionwikibackend.Service.SpeciesService;
 
+import com.example.dndavorionwikibackend.Model.Gods.Gods;
 import com.example.dndavorionwikibackend.Model.Species.Species;
 import com.example.dndavorionwikibackend.Repositories.SpeciesRepositories.SpeciesRepository;
 import org.springframework.stereotype.Service;
@@ -28,7 +29,11 @@ public class SpeciesService {
         return speciesRepository.findAll();
     }
 
-    public Species findById(long speciesId) {
+    public Species findById(long speciesId) throws Exception {
+        Optional<Species> speciesExist = speciesRepository.findById(speciesId);
+        if(!speciesExist.isPresent()){
+            throw new Exception("Species doesnt exist with given id");
+        }
         return speciesRepository.findSpeciesBySpeciesId(speciesId);
     }
 

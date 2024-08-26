@@ -1,6 +1,5 @@
-package com.example.dndavorionwikibackend.DTO.CharactersDTO.PlayerCharacterDTO;
+package com.example.dndavorionwikibackend.DTO.CharactersDTO;
 
-import com.example.dndavorionwikibackend.DTO.CharactersDTO.CharacterSuperDTO;
 import com.example.dndavorionwikibackend.Model.Campaign.Campaign;
 import com.example.dndavorionwikibackend.Model.User.User;
 

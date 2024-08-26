@@ -1,6 +1,7 @@
 package com.example.dndavorionwikibackend.Controller.CharacterController;
 
 
+import com.example.dndavorionwikibackend.DTO.CharactersDTO.CharacterCardDTO;
 import com.example.dndavorionwikibackend.Model.Characters.PlayerCharacter;
 import com.example.dndavorionwikibackend.Repositories.CharacterRepositories.PlayerCharacterRepository;
 import com.example.dndavorionwikibackend.Service.PlayerCharacterService.PlayerCharactersService;
@@ -14,7 +15,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @CrossOrigin
 @RestController
@@ -43,11 +45,13 @@ public class PlayerCharacterController {
 
     @CrossOrigin
     @GetMapping(value = "/all")
-    public List<PlayerCharacter> listAll() {
-        List<PlayerCharacter> listPlayerCharacters = playerCharactersService.findAll();
-
-        return listPlayerCharacters;
+    public Set<CharacterCardDTO> listAll() {
+        return playerCharactersService.findAll()
+                .stream()
+                .map(playerCharacterTranslator::playerCharacterToCharacterCardDTO)
+                .collect(Collectors.toSet());
     }
+    
 
     @CrossOrigin
     @GetMapping("/{id}")
