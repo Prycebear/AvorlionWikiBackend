@@ -1,8 +1,13 @@
 package com.example.dndavorionwikibackend.Model.Items.Resources.Plant;
 
 import com.example.dndavorionwikibackend.Model.Items.ItemSuper;
+import com.example.dndavorionwikibackend.Model.Items.Resources.ResourceSuper;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 
-public class Plant extends ItemSuper {
+@Entity
+@Table(name = "PLANTS")
+public class Plant extends ResourceSuper {
 
     public enum plantType{
         HERB,
@@ -11,7 +16,8 @@ public class Plant extends ItemSuper {
         VEGETABLE,
         BARK,
         MOSS,
-        FUNGUS
+        FUNGUS,
+        FLOWER
     }
 
     public enum plantEffects{
