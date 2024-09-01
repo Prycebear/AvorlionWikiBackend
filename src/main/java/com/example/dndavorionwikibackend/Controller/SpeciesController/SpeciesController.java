@@ -7,6 +7,7 @@ import com.example.dndavorionwikibackend.Model.Species.Species;
 import com.example.dndavorionwikibackend.Service.SpeciesService.SpeciesService;
 import com.example.dndavorionwikibackend.Translation.SpeciesTranslator.SpeciesTranslator;
 import jakarta.transaction.Transactional;
+import org.springframework.http.HttpMessage;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
