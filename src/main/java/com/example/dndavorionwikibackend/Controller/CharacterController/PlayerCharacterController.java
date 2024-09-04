@@ -44,7 +44,7 @@ public class PlayerCharacterController {
 
 
     @CrossOrigin
-    @GetMapping(value = "/all")
+    @GetMapping(value = "/card/all")
     public Set<CharacterCardDTO> listAll() {
         return playerCharactersService.findAll()
                 .stream()

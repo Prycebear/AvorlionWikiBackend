@@ -11,9 +11,6 @@ import java.util.Set;
 
 public class ContinentDTO {
 
-    public ContinentDTO() {
-    }
-
     private long locationId;
 
     private String locationName;

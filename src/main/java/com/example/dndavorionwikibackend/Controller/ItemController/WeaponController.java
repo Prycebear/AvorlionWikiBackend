@@ -36,16 +36,6 @@ public class WeaponController {
         weaponTranslator.weaponToWeaponsCardDTO(weaponService.save(weapon));
     }
 
-//    @CrossOrigin
-//    @GetMapping(value = "/all/cards")
-//    public Set<WeaponCardDTO> listAll() {
-//        return weaponService.findAll()
-//                .stream()
-//                .map(weaponTranslator::weaponToWeaponsCardDTO)
-//                .collect(Collectors.toSet());
-//    }
-
-
 
     @CrossOrigin
     @GetMapping(value = "/all/cards")

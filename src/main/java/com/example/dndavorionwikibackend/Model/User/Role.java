@@ -17,6 +17,7 @@ import java.util.Set;
 @Table(name = "Role")
 public class Role {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ROLE_ID", nullable = false, unique = true)

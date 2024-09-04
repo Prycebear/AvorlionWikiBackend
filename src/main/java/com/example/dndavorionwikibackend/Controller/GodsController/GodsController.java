@@ -34,7 +34,7 @@ public class GodsController {
 
 
     @CrossOrigin
-    @GetMapping(value = "/all")
+    @GetMapping(value = "/card/all")
     public Set<GodsCardDTO> listAll() {
         return godsService.findAll()
                 .stream()
