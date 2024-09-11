@@ -51,7 +51,7 @@ public class CampaingController {
 
 
     @CrossOrigin
-    @GetMapping(value = "/all")
+    @GetMapping(value = "/card/all")
     public Set<CampaignCardDTO> listAll() {
         return campaignService.findAll()
                 .stream()

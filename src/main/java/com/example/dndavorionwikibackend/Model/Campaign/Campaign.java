@@ -29,12 +29,10 @@ public class Campaign {
     @Column(name="CAMPAIGN_TYPE")
     private String campaignType;
 
-    @JsonIgnore
     @OneToMany
     @JoinColumn(name = "CAMPAIGN_ID")
     private Set<Session> sessions;
 
-    @JsonBackReference
     @OneToMany
     @JoinColumn(name = "CAMPAIGN_ID")
     private Set<PlayerCharacter> playerCharacters;

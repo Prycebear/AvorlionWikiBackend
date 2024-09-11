@@ -18,5 +18,4 @@ public class FantasyRole {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ROLE_ID", nullable = false, unique = true)
     private long roleId;
-
 }

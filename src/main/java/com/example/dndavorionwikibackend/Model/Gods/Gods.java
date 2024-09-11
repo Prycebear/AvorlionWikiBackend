@@ -1,17 +1,8 @@
 package com.example.dndavorionwikibackend.Model.Gods;
 
 import com.example.dndavorionwikibackend.Model.Characters.PlayerCharacter;
-import com.example.dndavorionwikibackend.Model.Groups.Cults.Cults;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.util.Set;
 
@@ -41,10 +32,6 @@ public class Gods {
     @JoinColumn(name = "GODS_ID")
     private Set<PlayerCharacter> characterGod;
 
-    @JsonIgnore
-    @ManyToOne
-    @JoinColumn(name="CULTS_ID")
-    private Cults cults;
 
     public Long getGodsId() {
         return godsId;
@@ -94,12 +81,5 @@ public class Gods {
         this.characterGod = characterGod;
     }
 
-    public Cults getCults() {
-        return cults;
-    }
-
-    public void setCults(Cults cults) {
-        this.cults = cults;
-    }
 
 }

@@ -1,6 +1,5 @@
 package com.example.dndavorionwikibackend.Model.History;
 
-import com.example.dndavorionwikibackend.Model.Calendar.WorldDate;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -20,6 +19,5 @@ public class History {
     @Column(name = "HISTORY_ID", nullable = false, unique = true)
     private long historyId;
 
-    @ManyToMany(mappedBy = "histories")
-    private Set<WorldDate> worldDates;
+    private String event;
 }

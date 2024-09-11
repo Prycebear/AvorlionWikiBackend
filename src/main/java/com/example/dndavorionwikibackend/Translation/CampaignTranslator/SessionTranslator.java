@@ -1,5 +1,6 @@
 package com.example.dndavorionwikibackend.Translation.CampaignTranslator;
 
+import com.example.dndavorionwikibackend.DTO.CampaignDTO.SessionCardDTO;
 import com.example.dndavorionwikibackend.DTO.CampaignDTO.SessionDTO;
 import com.example.dndavorionwikibackend.DTO.SpeciesDTO.SpeciesDTO;
 import com.example.dndavorionwikibackend.Model.Campaign.Session;
@@ -16,11 +17,11 @@ public class SessionTranslator {
         this.modelMapper = new ModelMapper();
     }
 
-    public SessionDTO sessionToSessionDTO (Session session){
-        return modelMapper.map(session, SessionDTO.class);
+    public SessionCardDTO sessionToSessionCardDTO (Session session){
+        return modelMapper.map(session, SessionCardDTO.class);
     }
 
-    public Session SessionDTOToSpecies (SessionDTO sessionDTO){
-        return modelMapper.map(sessionDTO, Session.class);
+    public Session SessionCardDTOToSpecies (SessionCardDTO sessionCardDTO){
+        return modelMapper.map(sessionCardDTO, Session.class);
     }
 }
